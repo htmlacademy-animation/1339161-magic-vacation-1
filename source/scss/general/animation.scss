@@ -61,3 +61,21 @@ $basic-transition-function: ease;
     opacity: 1;
   }
 }
+
+// Смена
+.slider__item-text {
+  opacity: 0;
+  transform: translateX(50px);
+
+  transition: all ($basic-transition-speed * 2) $basic-transition-function $basic-transition-speed;
+
+  .swiper-slide-active &,
+  .swiper-slide-next & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slider__item:nth-child(2n) .slider__item-text {
+  transition-delay: ($basic-transition-speed * 2);
+}
