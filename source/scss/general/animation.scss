@@ -1,0 +1,21 @@
+$basic-transition-speed: 0.35s;
+$basic-transition-function: ease;
+
+// Анимация наведения на элементы меню сайта
+.page-header__menu a {
+  transition: color $basic-transition-speed $basic-transition-function;
+
+  &::after {
+    display: block;
+    transition: background-color $basic-transition-speed $basic-transition-function;
+  }
+
+  &:not(.active)::after {
+    width: 0;
+    transition: width $basic-transition-speed $basic-transition-function;
+  }
+
+  &:not(.active):hover::after {
+    width: 100%;
+  }
+}
