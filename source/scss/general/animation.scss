@@ -101,18 +101,30 @@ $basic-transition-function: ease;
 }
 
 // Появлние текстового поля
-.screen--game .form {
-  float: right;
-  width: 40%;
+.form {
+  justify-content: flex-end;
 
-  animation-name: input-appear;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  .form__field {
+    flex-grow: 1;
+
+    animation-name: input-appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .form__button {
+    flex-grow: 0;
+  }
 }
 
 @keyframes input-appear {
+  from {
+    width: 50px;
+    flex-grow: 0;
+  }
+
   to {
-    width: 100%;
+    flex-grow: 1;
   }
 }
 
