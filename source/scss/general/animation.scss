@@ -1,8 +1,9 @@
 $basic-animation-speed: 0.35s;
 $basic-animation-function: ease;
-$jumpin-animation-function: cubic-bezier(0.45, 0.9, 0.5, 1);
 $basic-bias: 15px;
+$medium-bias: 50px;
 $medium-animation-speed: 0.75s;
+$jumpin-animation-function: cubic-bezier(0.45, 0.9, 0.5, 1);
 
 // Анимация наведения на элементы меню сайта
 .page-header__menu a {
@@ -50,7 +51,7 @@ $medium-animation-speed: 0.75s;
 
   .social-block__link {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY($basic-bias);
 
     .social-block:hover &--fb {
       transition-property: transform, opacity, color;
@@ -80,15 +81,16 @@ $medium-animation-speed: 0.75s;
   }
 
   .social-block .social-block__link {
-    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
     transform: translateY(0);
+
+    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
   }
 }
 
 // Анимация появления текстов истории
 .slider__item-text {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX($medium-bias);
 
   transition: all $medium-animation-speed $basic-animation-function $basic-animation-speed;
 
@@ -142,7 +144,7 @@ $medium-animation-speed: 0.75s;
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY($basic-bias);
   }
   to {
     opacity: 1;
