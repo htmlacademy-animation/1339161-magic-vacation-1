@@ -1,5 +1,7 @@
 $basic-animation-speed: 0.35s;
 $basic-animation-function: ease;
+$jumpin-animation-function: cubic-bezier(0.45, 0.9, 0.5, 1);
+$basic-bias: 15px;
 $medium-animation-speed: 0.75s;
 
 // Анимация наведения на элементы меню сайта
@@ -131,7 +133,6 @@ $medium-animation-speed: 0.75s;
 }
 
 // Появлние блока «Отгадай первым место назначения»
-
 .intro__message {
   animation-name: fade-in;
   animation-duration: $medium-animation-speed;
@@ -145,6 +146,39 @@ $medium-animation-speed: 0.75s;
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Анимация шапки, меню и футера при изначальной загрузке страницы
+.page-header__logo {
+  opacity: 0;
+  transform: translateX(-$basic-bias);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page-header__nav {
+  opacity: 0;
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+  }
+}
+
+.screen__footer {
+  transform: translateY(100%);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
     transform: translateY(0);
   }
 }

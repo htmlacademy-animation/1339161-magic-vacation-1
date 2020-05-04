@@ -9,6 +9,9 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
+// custom modules
+import bodyload from './modules/bodyload.js';
+
 // init modules
 mobileHeight();
 slider();
@@ -18,6 +21,7 @@ chat();
 result();
 form();
 social();
+bodyload();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
