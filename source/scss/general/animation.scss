@@ -22,44 +22,50 @@ $basic-transition-function: ease;
 }
 
 // Смена состояний иконки «поделиться» и иконок соц. сетей
-.social-block__toggler {
-  transition: color $basic-transition-speed $basic-transition-function;
+@media (min-width: $tablet + 1) and (orientation: landscape) {
+  .social-block__toggler {
+    transition: color $basic-transition-speed $basic-transition-function;
 
-  &::before {
-    transition-property: width, height;
-    transition-duration: $basic-transition-speed;
-    transition-timing-function: $basic-transition-function;
-  }
-}
-
-.social-block__link {
-  opacity: 0;
-  transform: translateY(15px);
-
-  &--fb {
-    transition-property: transform, opacity, color;
-    transition-duration: $basic-transition-speed;
-    transition-timing-function: $basic-transition-function;
-    transition-delay: 0ms;
+    &::before {
+      transition-property: width, height;
+      transition-duration: $basic-transition-speed;
+      transition-timing-function: $basic-transition-function;
+    }
   }
 
-  &--insta {
-    transition-property: transform, opacity, color;
-    transition-duration: $basic-transition-speed;
-    transition-timing-function: $basic-transition-function;
-    transition-delay: 100ms, 100ms, 0ms;
-  }
-
-  &--vk {
-    transition-property: transform, opacity, color;
-    transition-duration: $basic-transition-speed;
-    transition-timing-function: $basic-transition-function;
-    transition-delay: 200ms, 200ms, 0ms;
-  }
-
-  .social-block--active & {
-    transform: translateY(0);
+  .social-block__list {
     opacity: 1;
+  }
+
+  .social-block__link {
+    opacity: 0;
+    transform: translateY(15px);
+
+    &--fb {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-transition-speed;
+      transition-timing-function: $basic-transition-function;
+      transition-delay: 0ms;
+    }
+
+    &--insta {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-transition-speed;
+      transition-timing-function: $basic-transition-function;
+      transition-delay: 100ms, 100ms, 0ms;
+    }
+
+    &--vk {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-transition-speed;
+      transition-timing-function: $basic-transition-function;
+      transition-delay: 200ms, 200ms, 0ms;
+    }
+
+    .social-block--active & {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 
