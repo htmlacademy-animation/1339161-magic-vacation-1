@@ -62,7 +62,7 @@ $basic-transition-function: ease;
   }
 }
 
-// Смена
+// Анимация появления текстов истории
 .slider__item-text {
   opacity: 0;
   transform: translateX(50px);
@@ -78,4 +78,20 @@ $basic-transition-function: ease;
 
 .slider__item:nth-child(2n) .slider__item-text {
   transition-delay: ($basic-transition-speed * 2);
+}
+
+// Появлние текстового поля
+.screen--game .form {
+  float: right;
+  width: 400px;
+
+  animation-name: input-appear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes input-appear {
+  to {
+    width: 100%;
+  }
 }
