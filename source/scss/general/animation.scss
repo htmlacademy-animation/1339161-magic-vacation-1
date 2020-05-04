@@ -15,7 +15,8 @@ $basic-transition-function: ease;
     transition: width $basic-transition-speed $basic-transition-function;
   }
 
-  &:not(.active):hover::after {
+  &:not(.active):hover::after,
+  &:not(.active):focus::after {
     width: 100%;
   }
 }
