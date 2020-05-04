@@ -1,22 +1,34 @@
-$basic-transition-speed: 0.35s;
-$basic-transition-function: ease;
+$basic-animation-speed: 0.35s;
+$basic-animation-function: ease;
+$basic-bias: 15px;
+$medium-bias: 50px;
+$medium-animation-speed: 0.75s;
+$jumpin-animation-function: cubic-bezier(0.45, 0.9, 0.5, 1);
 
 // Анимация наведения на элементы меню сайта
 .page-header__menu a {
-  transition: color $basic-transition-speed $basic-transition-function;
+  transition: color $basic-animation-speed $basic-animation-function;
 
   &::after {
     display: block;
-    transition: background-color $basic-transition-speed $basic-transition-function;
+
+    transition: background-color $basic-animation-speed $basic-animation-function;
   }
 
   &:not(.active)::after {
+    left: auto;
+    right: 0;
+
     width: 0;
-    transition: width $basic-transition-speed $basic-transition-function;
+
+    transition: width $basic-animation-speed $basic-animation-function;
   }
 
   &:not(.active):hover::after,
   &:not(.active):focus::after {
+    left: 0;
+    right: auto;
+
     width: 100%;
   }
 }
@@ -24,12 +36,12 @@ $basic-transition-function: ease;
 // Смена состояний иконки «поделиться» и иконок соц. сетей
 @media (min-width: $tablet + 1) and (orientation: landscape) {
   .social-block__toggler {
-    transition: color $basic-transition-speed $basic-transition-function;
+    transition: color $basic-animation-speed $basic-animation-function;
 
     &::before {
       transition-property: width, height;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
     }
   }
 
@@ -39,26 +51,26 @@ $basic-transition-function: ease;
 
   .social-block__link {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY($basic-bias);
 
     .social-block:hover &--fb {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 0ms;
     }
 
     .social-block:hover &--insta {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 100ms, 100ms, 0ms;
     }
 
     .social-block:hover &--vk {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 200ms, 200ms, 0ms;
     }
 
@@ -69,17 +81,18 @@ $basic-transition-function: ease;
   }
 
   .social-block .social-block__link {
-    transition: opacity $basic-transition-speed $basic-transition-function $basic-transition-speed;
     transform: translateY(0);
+
+    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
   }
 }
 
 // Анимация появления текстов истории
 .slider__item-text {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX($medium-bias);
 
-  transition: all ($basic-transition-speed * 2) $basic-transition-function $basic-transition-speed;
+  transition: all $medium-animation-speed $basic-animation-function $basic-animation-speed;
 
   .swiper-slide-active &,
   .swiper-slide-next & {
@@ -89,40 +102,85 @@ $basic-transition-function: ease;
 }
 
 .slider__item:nth-child(2n) .slider__item-text {
-  transition-delay: ($basic-transition-speed * 2);
+  transition-delay: $medium-animation-speed;
 }
 
 // Появлние текстового поля
-.screen--game .form {
-  float: right;
-  width: 40%;
+.form {
+  justify-content: flex-end;
 
-  animation-name: input-appear;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  .form__field {
+    flex-grow: 1;
+    width: auto;
+
+    animation-name: input-appear;
+    animation-duration: $medium-animation-speed;
+    animation-fill-mode: forwards;
+  }
+
+  .form__button {
+    flex-grow: 0;
+  }
 }
 
 @keyframes input-appear {
+  from {
+    width: 50px;
+    flex-grow: 0;
+  }
+
   to {
-    width: 100%;
+    flex-grow: 1;
   }
 }
 
 // Появлние блока «Отгадай первым место назначения»
-
 .intro__message {
   animation-name: fade-in;
-  animation-duration: $basic-transition-speed * 2;
+  animation-duration: $medium-animation-speed;
   animation-fill-mode: both;
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY($basic-bias);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Анимация шапки, меню и футера при изначальной загрузке страницы
+.page-header__logo {
+  opacity: 0;
+  transform: translateX(-$basic-bias);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page-header__nav {
+  opacity: 0;
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+  }
+}
+
+.screen__footer {
+  transform: translateY(100%);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
     transform: translateY(0);
   }
 }
