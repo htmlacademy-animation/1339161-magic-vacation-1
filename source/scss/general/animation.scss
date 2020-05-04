@@ -107,6 +107,7 @@ $medium-animation-speed: 0.75s;
 
   .form__field {
     flex-grow: 1;
+    width: auto;
 
     animation-name: input-appear;
     animation-duration: $medium-animation-speed;
