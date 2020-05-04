@@ -7,16 +7,24 @@ $basic-transition-function: ease;
 
   &::after {
     display: block;
+
     transition: background-color $basic-transition-speed $basic-transition-function;
   }
 
   &:not(.active)::after {
+    left: auto;
+    right: 0;
+
     width: 0;
+
     transition: width $basic-transition-speed $basic-transition-function;
   }
 
   &:not(.active):hover::after,
   &:not(.active):focus::after {
+    left: 0;
+    right: auto;
+
     width: 100%;
   }
 }
