@@ -1,14 +1,15 @@
-$basic-transition-speed: 0.35s;
-$basic-transition-function: ease;
+$basic-animation-speed: 0.35s;
+$basic-animation-function: ease;
+$medium-animation-speed: 0.75s;
 
 // Анимация наведения на элементы меню сайта
 .page-header__menu a {
-  transition: color $basic-transition-speed $basic-transition-function;
+  transition: color $basic-animation-speed $basic-animation-function;
 
   &::after {
     display: block;
 
-    transition: background-color $basic-transition-speed $basic-transition-function;
+    transition: background-color $basic-animation-speed $basic-animation-function;
   }
 
   &:not(.active)::after {
@@ -17,7 +18,7 @@ $basic-transition-function: ease;
 
     width: 0;
 
-    transition: width $basic-transition-speed $basic-transition-function;
+    transition: width $basic-animation-speed $basic-animation-function;
   }
 
   &:not(.active):hover::after,
@@ -32,12 +33,12 @@ $basic-transition-function: ease;
 // Смена состояний иконки «поделиться» и иконок соц. сетей
 @media (min-width: $tablet + 1) and (orientation: landscape) {
   .social-block__toggler {
-    transition: color $basic-transition-speed $basic-transition-function;
+    transition: color $basic-animation-speed $basic-animation-function;
 
     &::before {
       transition-property: width, height;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
     }
   }
 
@@ -51,22 +52,22 @@ $basic-transition-function: ease;
 
     .social-block:hover &--fb {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 0ms;
     }
 
     .social-block:hover &--insta {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 100ms, 100ms, 0ms;
     }
 
     .social-block:hover &--vk {
       transition-property: transform, opacity, color;
-      transition-duration: $basic-transition-speed;
-      transition-timing-function: $basic-transition-function;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
       transition-delay: 200ms, 200ms, 0ms;
     }
 
@@ -77,7 +78,7 @@ $basic-transition-function: ease;
   }
 
   .social-block .social-block__link {
-    transition: opacity $basic-transition-speed $basic-transition-function $basic-transition-speed;
+    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
     transform: translateY(0);
   }
 }
@@ -87,7 +88,7 @@ $basic-transition-function: ease;
   opacity: 0;
   transform: translateX(50px);
 
-  transition: all ($basic-transition-speed * 2) $basic-transition-function $basic-transition-speed;
+  transition: all $medium-animation-speed $basic-animation-function $basic-animation-speed;
 
   .swiper-slide-active &,
   .swiper-slide-next & {
@@ -97,7 +98,7 @@ $basic-transition-function: ease;
 }
 
 .slider__item:nth-child(2n) .slider__item-text {
-  transition-delay: ($basic-transition-speed * 2);
+  transition-delay: $medium-animation-speed;
 }
 
 // Появлние текстового поля
@@ -108,7 +109,7 @@ $basic-transition-function: ease;
     flex-grow: 1;
 
     animation-name: input-appear;
-    animation-duration: 1s;
+    animation-duration: $medium-animation-speed;
     animation-fill-mode: forwards;
   }
 
@@ -132,7 +133,7 @@ $basic-transition-function: ease;
 
 .intro__message {
   animation-name: fade-in;
-  animation-duration: $basic-transition-speed * 2;
+  animation-duration: $medium-animation-speed;
   animation-fill-mode: both;
 }
 
