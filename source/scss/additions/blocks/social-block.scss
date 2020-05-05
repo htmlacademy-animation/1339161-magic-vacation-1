@@ -18,36 +18,38 @@
     opacity: 0;
     transform: translateY($basic-bias);
 
-    .social-block:hover &--fb {
-      transition-property: transform, opacity, color;
-      transition-duration: $basic-animation-speed;
-      transition-timing-function: $basic-animation-function;
-      transition-delay: 0ms;
-    }
-
-    .social-block:hover &--insta {
-      transition-property: transform, opacity, color;
-      transition-duration: $basic-animation-speed;
-      transition-timing-function: $basic-animation-function;
-      transition-delay: 100ms, 100ms, 0ms;
-    }
-
-    .social-block:hover &--vk {
-      transition-property: transform, opacity, color;
-      transition-duration: $basic-animation-speed;
-      transition-timing-function: $basic-animation-function;
-      transition-delay: 200ms, 200ms, 0ms;
-    }
-
-    .social-block--active & {
+    .social-block:hover &,
+    .social-block--active &,
+    .social-block__toggler:focus + .social-block__list & {
       opacity: 1;
       transform: translateY(0);
+
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
+
+      &--fb {
+        transition-delay: 0ms;
+      }
+
+      &--insta {
+        transition-delay: 100ms, 100ms, 0ms;
+      }
+
+      &--vk {
+        transition-delay: 200ms, 200ms, 0ms;
+      }
+    }
+
+    &:focus {
+      opacity: 1;
     }
   }
 
   .social-block .social-block__link {
-    transform: translateY(0);
-
-    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
+    transition-property: transform, opacity;
+    transition-duration: $basic-animation-speed;
+    transition-timing-function: $basic-animation-function;
+    transition-delay: $basic-animation-speed, 0ms;
   }
 }
