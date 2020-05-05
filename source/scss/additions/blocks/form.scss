@@ -1,0 +1,17 @@
+// Появлние текстового поля
+.form {
+  justify-content: flex-end;
+
+  .form__field {
+    flex-grow: 1;
+    width: auto;
+
+    animation-name: input-appear;
+    animation-duration: $medium-animation-speed;
+    animation-fill-mode: forwards;
+  }
+
+  .form__button {
+    flex-grow: 0;
+  }
+}

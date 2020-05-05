@@ -1,0 +1,17 @@
+// Анимация появления текстов истории
+.slider__item-text {
+  opacity: 0;
+  transform: translateX($medium-bias);
+
+  transition: all $medium-animation-speed $basic-animation-function $basic-animation-speed;
+
+  .swiper-slide-active &,
+  .swiper-slide-next & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slider__item:nth-child(2n) .slider__item-text {
+  transition-delay: $medium-animation-speed;
+}

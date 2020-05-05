@@ -1,0 +1,6 @@
+// Появлние блока «Отгадай первым место назначения»
+.intro__message {
+  animation-name: fade-in;
+  animation-duration: $medium-animation-speed;
+  animation-fill-mode: both;
+}

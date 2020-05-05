@@ -1,0 +1,53 @@
+// Смена состояний иконки «поделиться» и иконок соц. сетей
+@media (min-width: $tablet + 1) and (orientation: landscape) {
+  .social-block__toggler {
+    transition: color $basic-animation-speed $basic-animation-function;
+
+    &::before {
+      transition-property: width, height;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
+    }
+  }
+
+  .social-block .social-block__list {
+    opacity: 1;
+  }
+
+  .social-block__link {
+    opacity: 0;
+    transform: translateY($basic-bias);
+
+    .social-block:hover &--fb {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
+      transition-delay: 0ms;
+    }
+
+    .social-block:hover &--insta {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
+      transition-delay: 100ms, 100ms, 0ms;
+    }
+
+    .social-block:hover &--vk {
+      transition-property: transform, opacity, color;
+      transition-duration: $basic-animation-speed;
+      transition-timing-function: $basic-animation-function;
+      transition-delay: 200ms, 200ms, 0ms;
+    }
+
+    .social-block--active & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .social-block .social-block__link {
+    transform: translateY(0);
+
+    transition: opacity $basic-animation-speed $basic-animation-function $basic-animation-speed;
+  }
+}
