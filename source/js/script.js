@@ -24,5 +24,7 @@ fullPageScroll.init();
 
 // custom modules
 import bodyload from './additions/bodyload.js';
+import socialOnFocus from './additions/social-on-focus.js';
 
 bodyload();
+socialOnFocus();
