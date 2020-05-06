@@ -19,12 +19,17 @@ result();
 form();
 social();
 
-const fullPageScroll = new FullPageScroll();
-fullPageScroll.init();
+// fullPageScroll выносится в глобальную область видимости, чтобы была
+// возможность перезаписать метод changeVisibilityDisplay() в отдельном
+// модуле additions/curtain.js
+window.fullPageScroll = new FullPageScroll();
+window.fullPageScroll.init();
 
 // custom modules
 import bodyload from './additions/bodyload.js';
 import socialOnFocus from './additions/social-on-focus.js';
+import curtain from './additions/curtain.js';
 
 bodyload();
 socialOnFocus();
+curtain();
