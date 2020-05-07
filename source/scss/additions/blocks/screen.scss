@@ -1,0 +1,10 @@
+// Анимация шапки, меню и футера при изначальной загрузке страницы
+.screen__footer {
+  transform: translateY(100%);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    transform: translateY(0);
+  }
+}

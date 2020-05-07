@@ -1,0 +1,27 @@
+// Анимация появления текстов истории
+
+.slider__item-text {
+  opacity: 0;
+
+  .swiper-slide-active & {
+    animation-name: appear-text;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $basic-animation-function;
+    animation-delay: $basic-animation-speed;;
+    animation-fill-mode: forwards;
+  }
+
+  .swiper-slide-next & {
+    animation-name: appear-text;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $basic-animation-function;
+    animation-delay: $medium-animation-speed;
+    animation-fill-mode: forwards;
+  }
+
+  .slider__item:not(.swiper-slide-active):not(.swiper-slide-next) & {
+    opacity: 0;
+
+    animation: none;
+  }
+}

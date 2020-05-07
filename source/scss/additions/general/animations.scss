@@ -1,0 +1,32 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY($basic-bias);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes input-appear {
+  from {
+    flex-grow: 0;
+    width: 50px;
+  }
+
+  to {
+    flex-grow: 1;
+  }
+}
+
+@keyframes appear-text {
+  from {
+    opacity: 0;
+    transform: translateX($basic-bias);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

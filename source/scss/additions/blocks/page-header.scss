@@ -1,0 +1,50 @@
+// Анимация наведения на элементы меню сайта
+.page-header__menu a {
+  transition: color $basic-animation-speed $basic-animation-function;
+
+  &::after {
+    display: block;
+
+    transition: background-color $basic-animation-speed $basic-animation-function;
+  }
+
+  &:not(.active)::after {
+    left: auto;
+    right: 0;
+
+    width: 0;
+
+    transition: width $basic-animation-speed $basic-animation-function;
+  }
+
+  &:not(.active):hover::after,
+  &:not(.active):focus::after {
+    left: 0;
+    right: auto;
+
+    width: 100%;
+  }
+}
+
+// Анимация шапки, меню и футера при изначальной загрузке страницы
+.page-header__logo {
+  opacity: 0;
+  transform: translateX(-$basic-bias);
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page-header__nav {
+  opacity: 0;
+
+  transition: all $medium-animation-speed $jumpin-animation-function;
+
+  .js-loaded & {
+    opacity: 1;
+  }
+}

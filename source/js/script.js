@@ -9,9 +9,6 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
-// custom modules
-import bodyload from './modules/bodyload.js';
-
 // init modules
 mobileHeight();
 slider();
@@ -21,7 +18,18 @@ chat();
 result();
 form();
 social();
-bodyload();
 
-const fullPageScroll = new FullPageScroll();
-fullPageScroll.init();
+// fullPageScroll выносится в глобальную область видимости, чтобы была
+// возможность перезаписать метод changeVisibilityDisplay() в отдельном
+// модуле additions/curtain.js
+window.fullPageScroll = new FullPageScroll();
+window.fullPageScroll.init();
+
+// custom modules
+import bodyload from './additions/bodyload.js';
+import socialOnFocus from './additions/social-on-focus.js';
+import curtain from './additions/curtain.js';
+
+bodyload();
+socialOnFocus();
+curtain();
