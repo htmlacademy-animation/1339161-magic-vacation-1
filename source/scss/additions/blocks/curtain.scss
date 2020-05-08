@@ -5,13 +5,15 @@
   z-index: 2;
 
   width: 100%;
-  height: 0;
+  height: 100%;
 
   background: $c-dark;
 
-  transition: height $medium-animation-speed $basic-animation-function;
+  transform: translateY(100%);
+
+  transition: transform $medium-animation-speed $basic-animation-function 100ms;
 
   &--up {
-    height: 100%;
+    transform: translateY(0);
   }
 }
