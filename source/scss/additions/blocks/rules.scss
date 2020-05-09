@@ -1,0 +1,49 @@
+.rules__item {
+  &::before {
+    animation-name: rules-bullets-appear;
+    animation-duration: $basic-animation-speed;
+    animation-timing-function: $bumpin-animation-function;
+    animation-fill-mode: both;
+  }
+
+  p {
+    animation-name: rules-text-appear;
+    animation-duration: $basic-animation-speed;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+}
+
+@for $i from 1 through 4 {
+  .rules__item:nth-child(#{$i}) {
+    &::before {
+      animation-delay: $basic-animation-speed + $i * 200ms;
+    }
+    p {
+      animation-delay: $basic-animation-speed + $i * 200ms + 200ms;
+    }
+  }
+}
+
+.rules__link {
+  color: rgba($c-purple, 0);
+
+  &::before {
+    width: 50px;
+    opacity: 0;
+  }
+
+  &--animated {
+    animation-name: rules-button-text-appear;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $basic-animation-function;
+    animation-fill-mode: both;
+  }
+
+  &--animated::before {
+    animation-name: rules-button-appear;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $basic-animation-function;
+    animation-fill-mode: both;
+  }
+}

@@ -39,3 +39,62 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
+@keyframes rules-bullets-appear {
+  from {
+    transform: scale(0);
+    color: rgba($c-light, 0);
+  }
+  to {
+    transform: scale(1);
+    color: rgba($c-light, 1);
+  }
+}
+
+@keyframes rules-text-appear {
+  from {
+    transform: translateX($basic-bias);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rules-button-appear {
+  0% {
+    opacity: 0;
+    width: 75px;
+    transform: translate(0, -50%);
+  }
+  15% {
+    opacity: 1;
+    width: 75px;
+    transform: translate(0, -50%);
+  }
+  40% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rules-button-text-appear {
+  0% {
+    color: rgba($c-dark, 0);
+  }
+  50% {
+    color: rgba($c-dark, 0);
+  }
+  100% {
+    color: rgba($c-dark, 1);
+  }
+}
