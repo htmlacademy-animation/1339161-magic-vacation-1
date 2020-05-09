@@ -2,8 +2,8 @@ export default () => {
   // Названия разделов вынесены в словарь, чтобы код лучше читался
   const screenListMap = [`top`, `story`, `prizes`, `rules`, `game`];
 
-  let screenStory = document.querySelector(`.screen--story`);
-  let curtain = document.createElement(`div`);
+  const screenStory = document.querySelector(`.screen--story`);
+  const curtain = document.createElement(`div`);
   curtain.classList.add(`curtain`);
   screenStory.appendChild(curtain);
 
@@ -12,15 +12,15 @@ export default () => {
   // а теперь происходит проверка что это раздел и, если это раздел story,
   // то задается таймаут, за который успевает проиграться анимация шторки.
   window.fullPageScroll.changeVisibilityDisplay = function () {
-    let getCurrentScreen = function () {
-      let activeMenuLink = document.querySelector(`.js-menu-link.active`);
+    const getCurrentScreen = function () {
+      const activeMenuLink = document.querySelector(`.js-menu-link.active`);
       if (activeMenuLink) {
         return screenListMap.indexOf(activeMenuLink.dataset.href);
       }
       return -1;
     };
 
-    let switchScreens = function (screenFrom, screenTo, delay) {
+    const switchScreens = function (screenFrom, screenTo, delay) {
       setTimeout(() => {
         screenFrom.classList.add(`screen--hidden`);
         screenFrom.classList.remove(`active`);
@@ -29,7 +29,7 @@ export default () => {
       }, delay);
     };
 
-    let currentScreen = getCurrentScreen();
+    const currentScreen = getCurrentScreen();
     let curtainUpDelay = 0;
 
     if (screenListMap[currentScreen] === `story`) {

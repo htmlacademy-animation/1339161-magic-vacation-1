@@ -1,5 +1,5 @@
 // Смена состояний иконки «поделиться» и иконок соц. сетей
-@media (min-width: $tablet + 1) and (orientation: landscape) {
+@media (min-width: $mobile + 1) and (orientation: landscape) {
   .social-block__toggler {
     transition: color $basic-animation-speed $basic-animation-function;
 
@@ -7,6 +7,26 @@
       transition-property: width, height;
       transition-duration: $basic-animation-speed;
       transition-timing-function: $basic-animation-function;
+
+      // Анимация бампа при первом пояалении меню
+      animation-name: appear-social;
+      animation-duration: $basic-animation-speed;
+      animation-timing-function: $bumpin-animation-function;
+      animation-delay: $basic-animation-speed;
+      animation-fill-mode: forwards;
+    }
+
+    &--down,
+    &--down:focus{
+      color: $c-light;
+
+      &::before {
+        width: 100%;
+        height: 100%;
+
+        background-color: $c-purple;
+        border-color: $c-purple;
+      }
     }
   }
 
@@ -26,7 +46,7 @@
 
       transition-property: transform, opacity, color;
       transition-duration: $basic-animation-speed;
-      transition-timing-function: $basic-animation-function;
+      transition-timing-function: ease-out;
 
       &--fb {
         transition-delay: 0ms;

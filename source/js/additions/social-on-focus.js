@@ -1,39 +1,31 @@
 export default () => {
-  let socialBlock = document.querySelector(`.js-social-block`);
-  let socialBlockToggler = document.querySelector(`.social-block__toggler`);
-  let socialBlockLinkFB = document.querySelector(`.social-block__link--fb`);
-  let socialBlockLinkInsta = document.querySelector(`.social-block__link--insta`);
-  let socialBlockLinkVK = document.querySelector(`.social-block__link--vk`);
+  const addFocusListeners = function (blockSelector, triggers) {
+    const block = document.querySelector(blockSelector);
+    triggers.forEach((triggerSelector) => {
+      const trigger = document.querySelector(triggerSelector);
+      trigger.addEventListener(`focus`, () => {
+        block.classList.add(`social-block--active`);
+      });
+      trigger.addEventListener(`blur`, () => {
+        block.classList.remove(`social-block--active`);
+      });
+    });
+  };
 
-  socialBlockToggler.addEventListener(`focus`, function () {
-    socialBlock.classList.add(`social-block--active`);
+  // Добавление обработчика фокуса на кнопках соцсетей, чтобы блок списка
+  // соцсетей не пропадал при навигации табом по ним
+  addFocusListeners(`.js-social-block`, [
+    `.social-block__toggler`,
+    `.social-block__link--fb`,
+    `.social-block__link--insta`,
+    `.social-block__link--vk`
+  ]);
+
+  const toggler = document.querySelector(`.social-block__toggler`);
+  toggler.addEventListener(`click`, () => {
+    toggler.classList.toggle(`social-block__toggler--down`);
   });
-
-  socialBlockLinkFB.addEventListener(`focus`, function () {
-    socialBlock.classList.add(`social-block--active`);
-  });
-
-  socialBlockLinkInsta.addEventListener(`focus`, function () {
-    socialBlock.classList.add(`social-block--active`);
-  });
-
-  socialBlockLinkVK.addEventListener(`focus`, function () {
-    socialBlock.classList.add(`social-block--active`);
-  });
-
-  socialBlockToggler.addEventListener(`blur`, function () {
-    socialBlock.classList.remove(`social-block--active`);
-  });
-
-  socialBlockLinkFB.addEventListener(`blur`, function () {
-    socialBlock.classList.remove(`social-block--active`);
-  });
-
-  socialBlockLinkInsta.addEventListener(`blur`, function () {
-    socialBlock.classList.remove(`social-block--active`);
-  });
-
-  socialBlockLinkVK.addEventListener(`blur`, function () {
-    socialBlock.classList.remove(`social-block--active`);
+  toggler.addEventListener(`blur`, () => {
+    toggler.classList.remove(`social-block__toggler--down`);
   });
 };

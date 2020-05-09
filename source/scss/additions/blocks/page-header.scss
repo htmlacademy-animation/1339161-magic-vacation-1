@@ -4,8 +4,21 @@
 
   &::after {
     display: block;
+    width: 0;
 
-    transition: background-color $basic-animation-speed $basic-animation-function;
+    transition-property: width, background-color;
+    transition-duration: $basic-animation-speed;
+    transition-timing-function: $basic-animation-function;
+  }
+
+  &.active::after {
+    width: 0;
+
+    transition-delay: $basic-animation-speed, 0s;
+  }
+
+  .js-loaded &.active::after {
+    width: 100%;
   }
 
   &:not(.active)::after {
@@ -13,8 +26,6 @@
     right: 0;
 
     width: 0;
-
-    transition: width $basic-animation-speed $basic-animation-function;
   }
 
   &:not(.active):hover::after,
@@ -31,7 +42,9 @@
   opacity: 0;
   transform: translateX(-$basic-bias);
 
-  transition: all $medium-animation-speed $jumpin-animation-function;
+  transition-property: opacity, transform;
+  transition-duration: $medium-animation-speed;
+  transition-timing-function: $jumpin-animation-function;
 
   .js-loaded & {
     opacity: 1;
@@ -42,7 +55,7 @@
 .page-header__nav {
   opacity: 0;
 
-  transition: all $medium-animation-speed $jumpin-animation-function;
+  transition: opacity $medium-animation-speed $jumpin-animation-function $basic-animation-speed;
 
   .js-loaded & {
     opacity: 1;
