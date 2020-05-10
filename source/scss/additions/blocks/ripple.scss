@@ -1,0 +1,56 @@
+.ripple__word {
+  display: inline-block;
+  overflow: hidden;
+  padding-right: 0.1rem;
+
+  white-space: nowrap;
+}
+
+.ripple__letter {
+  display: inline-block;
+  padding-top: 3rem;
+
+  animation-name: ripple-appear;
+  animation-duration: $medium-animation-speed;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+
+  .ripple & {
+    animation-play-state: running;
+  }
+
+  will-change: transform;
+}
+
+/*
+// Это алгоритм анимации как на видео
+.title__letter:nth-child(4n+1) {
+  animation-delay: 300ms;
+}
+
+.title__letter:nth-child(4n+2) {
+  animation-delay: 150ms;
+}
+
+.title__letter:nth-child(4n+3) {
+  animation-delay: 0;
+}
+
+.title__letter:nth-child(4n) {
+  animation-delay: 150ms;
+}
+*/
+
+// Это алгоритм анимации как в ТЗ
+.ripple__letter:nth-child(3n+1) {
+  animation-delay: 0ms;
+}
+
+.ripple__letter:nth-child(3n) {
+  animation-delay: 150ms;
+}
+
+.ripple__letter:nth-child(3n+2) {
+  animation-delay: 300ms;
+}

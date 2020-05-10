@@ -1,10 +1,16 @@
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY($basic-bias);
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes rise-up {
+  from {
+    transform: translateY($basic-bias);
+  }
+  to {
     transform: translateY(0);
   }
 }
@@ -91,5 +97,14 @@
   }
   100% {
     color: rgba($c-dark, 1);
+  }
+}
+
+@keyframes ripple-appear {
+  from {
+    transform: translateY(120%);
+  }
+  to {
+    transform: translateY(0%);
   }
 }
