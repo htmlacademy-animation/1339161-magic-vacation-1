@@ -26,24 +26,30 @@
 }
 
 .rules__link {
-  color: rgba($c-purple, 0);
+  animation-name: rules-button-text-appear;
+  animation-duration: $medium-animation-speed;
+  animation-timing-function: $basic-animation-function;
+  animation-play-state: paused;
+  pointer-events: none;
 
   &::before {
-    width: 50px;
-    opacity: 0;
-  }
+    transform: translateY(-50%);
+    right: 0;
+    left: auto;
 
-  &--animated {
-    animation-name: rules-button-text-appear;
-    animation-duration: $medium-animation-speed;
-    animation-timing-function: $basic-animation-function;
-    animation-fill-mode: both;
-  }
-
-  &--animated::before {
     animation-name: rules-button-appear;
     animation-duration: $medium-animation-speed;
     animation-timing-function: $basic-animation-function;
     animation-fill-mode: both;
+    animation-play-state: paused;
+  }
+
+  &--animated {
+    animation-play-state: running;
+    pointer-events: auto;
+  }
+
+  &--animated::before {
+    animation-play-state: running;
   }
 }

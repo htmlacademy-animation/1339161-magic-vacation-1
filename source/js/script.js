@@ -30,8 +30,10 @@ import bodyload from './additions/bodyload.js';
 import socialOnFocus from './additions/social-on-focus.js';
 import curtain from './additions/curtain.js';
 import rulesButton from './additions/rules-button.js';
+import ripple from './additions/ripple.js';
 
 bodyload();
 socialOnFocus();
 curtain();
 rulesButton();
+ripple();

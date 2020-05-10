@@ -55,7 +55,7 @@
 .page-header__nav {
   opacity: 0;
 
-  transition: opacity $medium-animation-speed $jumpin-animation-function $basic-animation-speed;
+  transition: opacity $medium-animation-speed $jumpin-animation-function 200ms;
 
   .js-loaded & {
     opacity: 1;
