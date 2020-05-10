@@ -65,25 +65,20 @@
 @keyframes rules-button-appear {
   0% {
     opacity: 0;
-    width: 75px;
-    transform: translate(0, -50%);
+    width: 5rem;
   }
   15% {
     opacity: 1;
-    width: 75px;
-    transform: translate(0, -50%);
+    width: 5rem;
   }
   40% {
-    transform: translate(-50%, -50%);
   }
   50% {
     width: 100%;
-    transform: translate(-50%, -50%);
   }
   100% {
     opacity: 1;
     width: 100%;
-    transform: translate(-50%, -50%);
   }
 }
 
