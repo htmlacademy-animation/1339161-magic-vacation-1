@@ -25,3 +25,25 @@
     animation: none;
   }
 }
+
+.slider__control {
+  animation-play-state: running;
+
+  will-change: transform;
+
+  &--prev {
+    animation-name: slider-control-left-appear;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $bumpin-animation-function;
+    animation-delay: $basic-animation-speed;
+    animation-fill-mode: both;
+  }
+
+  &--next {
+    animation-name: slider-control-right-appear;
+    animation-duration: $medium-animation-speed;
+    animation-timing-function: $bumpin-animation-function;
+    animation-delay: $medium-animation-speed;
+    animation-fill-mode: both;
+  }
+}

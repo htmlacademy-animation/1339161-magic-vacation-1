@@ -108,3 +108,31 @@
     transform: translateY(0%);
   }
 }
+
+@keyframes slider-control-right-appear {
+  0% {
+    transform: translate(5rem, -15%) rotate(360deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -15%) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slider-control-left-appear {
+  0% {
+    transform: translate(-5rem, -15%) rotate(-360deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -15%) rotate(0);
+    opacity: 1;
+  }
+}
