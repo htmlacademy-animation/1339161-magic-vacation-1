@@ -4,7 +4,7 @@
   opacity: 0;
 
   .swiper-slide-active & {
-    animation-name: appear-text;
+    animation-name: arrive-right, fade-in;
     animation-duration: $medium-animation-speed;
     animation-timing-function: $basic-animation-function;
     animation-delay: $basic-animation-speed;;
@@ -12,7 +12,7 @@
   }
 
   .swiper-slide-next & {
-    animation-name: appear-text;
+    animation-name: arrive-right, fade-in;
     animation-duration: $medium-animation-speed;
     animation-timing-function: $basic-animation-function;
     animation-delay: $medium-animation-speed;
