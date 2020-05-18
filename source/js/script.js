@@ -28,12 +28,12 @@ window.fullPageScroll.init();
 // custom modules
 import bodyload from './additions/bodyload.js';
 import socialOnFocus from './additions/social-on-focus.js';
-import curtain from './additions/curtain.js';
+import changeScreens from './additions/change-screens.js';
 import rulesButton from './additions/rules-button.js';
 import ripple from './additions/ripple.js';
 
 bodyload();
 socialOnFocus();
-curtain();
+changeScreens();
 rulesButton();
 ripple();
