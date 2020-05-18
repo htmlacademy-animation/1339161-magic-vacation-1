@@ -1,0 +1,80 @@
+.prizes__lead {
+  animation-name: fade-in, rise-up;
+  animation-duration: $basic-animation-speed;
+  animation-fill-mode: both;
+  animation-delay: $medium-animation-speed;
+}
+
+@media (min-width: $mobile + 1) and (orientation: landscape) {
+  .prizes--animated {
+    .prizes__item--journeys {
+      animation-name: prize-journeys-appear;
+      animation-duration: 4s;
+      animation-fill-mode: both;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+
+      .prizes__desc b {
+        animation-name: fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 2.5s;
+      }
+
+      .prizes__desc span {
+        animation-name: arrive-right, fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 3s;
+      }
+    }
+
+    .prizes__item--cases {
+      animation-name: fade-in;
+      animation-duration: 250ms;
+      animation-fill-mode: both;
+      animation-timing-function: ease;
+      animation-delay: 3.5s;
+
+      .prizes__desc b {
+        animation-name: fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 4.5s;
+      }
+
+      .prizes__desc span {
+        animation-name: arrive-right, fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 5s;
+      }
+    }
+
+    .prizes__item--codes {
+      animation-name: fade-in;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+      animation-timing-function: ease;
+      animation-delay: 5.5s;
+
+      .prizes__desc b {
+        animation-name: fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 6.5s;
+      }
+
+      .prizes__desc span {
+        animation-name: arrive-right, fade-in;
+        animation-duration: $basic-animation-speed;
+        animation-fill-mode: both;
+        animation-delay: 7s;
+      }
+    }
+  }
+
+  .prizes__desc span {
+    padding-bottom: 2rem;
+  }
+}

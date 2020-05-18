@@ -50,4 +50,5 @@ export default () => {
 
   ripple(`.intro__title`, 350);
   ripple(`.intro__date`, 1000);
+  ripple(`.prizes__title`, 250);
 };
