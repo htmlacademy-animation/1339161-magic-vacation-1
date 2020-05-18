@@ -7,6 +7,11 @@ export default () => {
   curtain.classList.add(`curtain`);
   screenStory.appendChild(curtain);
 
+  let prizesShown = false; // Флаг, предотваращает повторны запуск анимации призов
+  const prizesBlock = document.querySelector(`.screen--prizes .prizes`);
+  const primaryAward = document.querySelector(`.prizes__item--journeys img`);
+
+
   // Переопределение метода, отвечающего за активацию раздела сайта. Раньше он
   // просто убирал с предыдущего раздела класс active и добавлял screen-hidden,
   // а теперь происходит проверка что это раздел и, если это раздел story,
@@ -50,6 +55,20 @@ export default () => {
       setTimeout(() => {
         curtain.classList.remove(`curtain--up`);
       }, curtainDownDelay);
+    }
+
+    // Запуск анимации призов
+    if (screenListMap[this.activeScreen] === `prizes`) {
+      if (!prizesShown) {
+        prizesBlock.classList.add(`prizes--animated`);
+        if (primaryAward) {
+          primaryAward.src = `img/primary-award.svg`;
+        }
+
+        prizesShown = true;
+      } else {
+        prizesBlock.classList.remove(`prizes--animated`);
+      }
     }
 
     switchScreens(this.screenElements[currentScreen], this.screenElements[this.activeScreen], curtainUpDelay);
