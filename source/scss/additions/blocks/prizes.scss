@@ -5,11 +5,62 @@
   animation-delay: $medium-animation-speed;
 }
 
-@media (min-width: $mobile + 1) and (orientation: landscape) {
-  .prizes__icon {
-    height: 27rem;
+.prizes__item {
+  &--journeys .prizes__icon{
+    bottom: 0rem;
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      left: 2rem;
+      top: -2rem;
+
+      width: 15rem;
+    }
   }
 
+  &--cases .prizes__icon {
+    position: relative;
+    left: -7rem;
+
+    width: 25rem;
+
+    @media (min-width: $stop-scaling) {
+      left: -2rem;
+      bottom: -0.7rem;
+
+      width: 260px;
+    }
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      left: 0;
+      bottom: 0;
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      left: -2rem;
+      top: -2rem;
+
+      width: 15rem;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      left: -2rem;
+      bottom: -1.3rem;
+
+      width: 10rem;
+    }
+  }
+
+  &--codes .prizes__icon {
+    position: relative;
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+       top: -1rem;
+       left: 5rem;
+    }
+  }
+}
+
+@media (min-width: $mobile + 1) and (orientation: landscape) {
   .prizes--animated {
     .prizes__item--journeys {
       animation-name: prize-journeys-appear;
