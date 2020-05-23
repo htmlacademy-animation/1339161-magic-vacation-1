@@ -115,6 +115,11 @@ export default () => {
       if (screenListMap[currentScreen] === `top`) {
         curtainDownDelay = 0;
       }
+      // Если сайт загружен сразу на внутреннем экране, то у шторки не будет
+      // класса curtain--up, его нужно поставить.
+      if (!curtain.classList.contains(`curtain--up`)) {
+        curtain.classList.add(`curtain--up`);
+      }
       setTimeout(() => {
         curtain.classList.remove(`curtain--up`);
       }, curtainDownDelay);
