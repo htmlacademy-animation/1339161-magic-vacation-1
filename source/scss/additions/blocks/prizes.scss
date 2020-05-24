@@ -9,6 +9,19 @@
   &--journeys .prizes__icon{
     bottom: 0rem;
 
+    width: 24.8rem;
+
+    @media (min-width: $stop-scaling) {
+      width: 268px;
+    }
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      left: 0;
+      bottom: 0;
+
+      width: 10rem;
+    }
+
     @media (max-width: $tablet) and (orientation: landscape) {
       left: 2rem;
       top: -2rem;
@@ -19,13 +32,13 @@
 
   &--cases .prizes__icon {
     position: relative;
-    left: -7rem;
+    left: -9rem;
 
-    width: 25rem;
+    width: 28.8rem;
 
     @media (min-width: $stop-scaling) {
       left: -2rem;
-      bottom: -0.7rem;
+      bottom: 0rem;
 
       width: 260px;
     }
@@ -33,6 +46,8 @@
     @media (max-width: $tablet) and (orientation: portrait) {
       left: 0;
       bottom: 0;
+
+      width: 11rem;
     }
 
     @media (max-width: $tablet) and (orientation: landscape) {
@@ -58,6 +73,10 @@
        left: 5rem;
     }
   }
+}
+
+.prizes__item--cases .prizes__desc b:after{
+  content: "7";
 }
 
 @media (min-width: $mobile + 1) and (orientation: landscape) {
@@ -91,11 +110,12 @@
       animation-timing-function: ease;
       animation-delay: 4.5s;
 
-      .prizes__desc b {
-        animation-name: fade-in;
-        animation-duration: $basic-animation-speed;
+      .prizes__desc b:after{
+        animation-name: fade-in, number-cases-count;
+        animation-duration: $basic-animation-speed, $medium-animation-speed;
         animation-fill-mode: both;
         animation-delay: 5.5s;
+        content: "7";
       }
 
       .prizes__desc span {

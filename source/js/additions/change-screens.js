@@ -71,6 +71,8 @@ export default () => {
     const prizesBlock = document.querySelector(`.screen--prizes .prizes`);
     const animationClass = `prizes--animated`;
     const primaryAward = document.querySelector(`.prizes__item--journeys img`);
+    const secondaryAward = document.querySelector(`.prizes__item--cases img`);
+    const secondaryAwardNumber = document.querySelector(`.prizes__item--cases .prizes__desc b`);
 
     if (isPlayed) {
       prizesBlock.classList.remove(animationClass);
@@ -78,6 +80,8 @@ export default () => {
     }
 
     primaryAward.src = `img/primary-award.svg`;
+    secondaryAward.src = `img/secondary-award.svg`;
+    secondaryAwardNumber.textContent = ``;
     prizesBlock.classList.add(animationClass);
   };
 
