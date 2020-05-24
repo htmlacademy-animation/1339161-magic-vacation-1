@@ -149,7 +149,7 @@
       type="translate"
       begin="cloudAppear.end"
       dur="1367ms"
-      values="0 -50; 0 -50; 0 33"
+      values="0 -50; 0 -50; 5 36"
       keyTimes="0; 0.2; 1"
       additive="sum"
       fill="freeze"/>
