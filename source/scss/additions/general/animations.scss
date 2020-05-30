@@ -154,27 +154,3 @@
     opacity: 1;
   }
 }
-
-@keyframes number-cases-count {
-  0% {
-    content: "1";
-  }
-  16.6% {
-    content: "2";
-  }
-  33.3% {
-    content: "3";
-  }
-  50% {
-    content: "4";
-  }
-  66.6% {
-    content: "5";
-  }
-  83.3% {
-    content: "6";
-  }
-  100% {
-    content: "7";
-  }
-}
