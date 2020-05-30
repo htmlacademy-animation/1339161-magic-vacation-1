@@ -72,6 +72,7 @@ export default () => {
     const animationClass = `prizes--animated`;
     const primaryAward = document.querySelector(`.prizes__item--journeys img`);
     const secondaryAward = document.querySelector(`.prizes__item--cases img`);
+    const additionalAward = document.querySelector(`.prizes__item--codes img`);
 
     if (isPlayed) {
       prizesBlock.classList.remove(animationClass);
@@ -80,6 +81,7 @@ export default () => {
 
     primaryAward.src = `img/primary-award.svg`;
     secondaryAward.src = `img/secondary-award.svg`;
+    additionalAward.src = `img/additional-award.svg`;
     prizesBlock.classList.add(animationClass);
   };
 
