@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 220" width="660" height="220">
+  <g>
+    <path
+      id="n" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M2.66,92V8H16.1V42.2H53.3V8H66.74V92H53.3V58.64H16.1V92H2.66Z"
+    >
+      <animateTransform
+        id="nAppear"
+        attributeName="transform"
+        type="translate"
+        begin="100ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="nAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="e" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M147.62,8V24.44H97V41.6h33.6V58H97V75.56h50.64V92H83.54V8h64.08Z"
+    >
+      <animateTransform
+        id="eAppear"
+        attributeName="transform"
+        type="translate"
+        begin="nAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="eAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="u" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M199.22,8l20.52,42.36L235.34,8h16.44l-31,84H204.38l9.48-25.92L185.78,8h13.44Z"
+    >
+      <animateTransform
+        id="uAppear"
+        attributeName="transform"
+        type="translate"
+        begin="eAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="uAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="g" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M273.74,24.44V92H260.3V8h50.16V24.44H273.74Z"
+    >
+      <animateTransform
+        id="gAppear"
+        attributeName="transform"
+        type="translate"
+        begin="uAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="gAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="a1" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M307.1,92l28-84h27.12l28.08,84H376.82L369,68.48h-37.8L323.42,92H307.1Zm56.64-40L350.3,11.84,336.86,52h26.88Z"
+    >
+      <animateTransform
+        id="a1Appear"
+        attributeName="transform"
+        type="translate"
+        begin="gAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="a1Appear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="d" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M396.38,110.24V75.56h7.44c4.56-4.68,7.8-18.36,8.76-56L412.94,8h48.6V75.56h10v34.68H456.86V92H411v18.24H396.38ZM448.1,75.56V24.44H425.54v3.12c-0.48,22.44-3.24,37.68-7.2,48H448.1Z"
+    >
+      <animateTransform
+        id="dAppear"
+        attributeName="transform"
+        type="translate"
+        begin="a1Appear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="dAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="a2" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M477.74,92l28-84h27.12L560.9,92H547.46l-7.8-23.52h-37.8L494.06,92H477.74Zm56.64-40-13.44-40.2L507.5,52h26.88Z"
+    >
+      <animateTransform
+        id="a2Appear"
+        attributeName="transform"
+        type="translate"
+        begin="dAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="a2Appear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="l" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M568.7,76.88a13.77,13.77,0,0,0,5,1c6.6,0,10.44-6.24,12-58.32L586.22,8h46.2V92H619V24.44H598.82l-0.12,3.12C597.14,81,589,94.4,573.74,94.4a28.55,28.55,0,0,1-6.72-.84Z"
+    >
+      <animateTransform
+        id="lAppear"
+        attributeName="transform"
+        type="translate"
+        begin="a2Appear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="lAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+    <path
+      id="exclamation" transform="translate(-2.16 0)" fill="none" stroke="currentColor" stroke-dasharray="1 100"
+      d="M646.1,70.4L647.54,2H661l1.44,68.4H646.1Zm8.28,6.36c4.8,0,8,3.24,8,8.16a8,8,0,0,1-16.08,0C646.34,80,649.58,76.76,654.38,76.76Z"
+    >
+      <animateTransform
+        id="exclAppear"
+        attributeName="transform"
+        type="translate"
+        begin="lAppear.end-550ms"
+        dur="600ms"
+        values="-2.16 0; -2.16 110; -2.16 95; -2.16 110"
+        keySplines="0.55 0 1 0.45; 0.25 1 0.5 1; 0.55 0 1 0.45"
+        calcMode="spline"
+        fill="freeze"/>
+      <animate
+        attributeName="stroke-dasharray"
+        from="1 100" to="100 0"
+        begin="exclAppear.begin-100ms"
+        dur="300ms"
+        fill="freeze"/>
+    </path>
+  </g>
+</svg>
