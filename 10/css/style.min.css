@@ -3573,6 +3573,31 @@ img {
   .prizes__desc span {
     padding-bottom: 2rem; } }
 
+.game__buttons {
+  display: block; }
+
+.result--negative .result__title {
+  margin-top: -1.8rem;
+  width: 66.5rem;
+  height: 22.6rem; }
+  @media (min-width: 2000px) {
+    .result--negative .result__title {
+      margin-top: -18px;
+      width: 665px;
+      height: 226px; } }
+  @media (orientation: portrait) {
+    .result--negative .result__title {
+      margin-top: -4.9rem;
+      width: 28.8rem;
+      height: 9.8rem; } }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    .result--negative .result__title {
+      margin-top: 0;
+      width: 50rem; } }
+  @media (max-width: 768px) and (orientation: landscape) {
+    .result--negative .result__title {
+      width: 45rem; } }
+
 .ripple__word {
   display: inline-block;
   overflow: hidden;
