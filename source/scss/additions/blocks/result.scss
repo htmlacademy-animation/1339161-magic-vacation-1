@@ -1,0 +1,28 @@
+.result--negative {
+  .result__title {
+    margin-top: -1.8rem;
+    width: 66.5rem;
+    height: 22.6rem;
+
+    @media (min-width: $stop-scaling) {
+      margin-top: -18px;
+      width: 665px;
+      height: 226px;
+    }
+
+    @media (orientation: portrait) {
+      margin-top: -4.9rem;
+      width: 28.8rem;
+      height: 9.8rem;
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      margin-top: 0;
+      width: 50rem;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      width: 45rem;
+    }
+  }
+}

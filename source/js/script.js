@@ -31,9 +31,11 @@ import socialOnFocus from './additions/social-on-focus.js';
 import changeScreens from './additions/change-screens.js';
 import rulesButton from './additions/rules-button.js';
 import ripple from './additions/ripple.js';
+import resultAnimation from './additions/result-animation.js';
 
 bodyload();
 socialOnFocus();
 changeScreens();
 rulesButton();
 ripple();
+resultAnimation();
