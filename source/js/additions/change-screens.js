@@ -10,8 +10,8 @@ export default () => {
 
   /**
    * Определение текущего экрана по активной ссылке в меню.
-   * @return {int} Индекс экрана в массиве screenListMap или -1, если активыный
-   *               экран не определн.
+   * @return {int} - Индекс экрана в массиве screenListMap или -1, если
+   *                 активыный экран не определн.
    * @return {void}
    */
   const getCurrentScreen = function () {
@@ -23,10 +23,25 @@ export default () => {
   };
 
   /**
+   * Добавляет ведущий ноль.
+   * @param {int} number - Исходное число.
+   * @param {int} chars - Необходимая длина строки.
+   * @return {string} - Число с ведущим нулем в формате строки.
+   */
+  const addLeadingZero = function (number, chars) {
+    const charsToBeAdded = chars - number.toString().length;
+
+    if (charsToBeAdded > 0) {
+      return `0`.repeat(charsToBeAdded) + number;
+    }
+    return number;
+  };
+
+  /**
    * Переключение между экранами.
-   * @param  {Element} screenFrom Текущий (активный) экран.
-   * @param  {Element} screenTo   Экран, на который призводится переключение.
-   * @param  {int} delay          Задержка в милисекундах.
+   * @param  {Element} screenFrom - Текущий (активный) экран.
+   * @param  {Element} screenTo - Экран, на который призводится переключение.
+   * @param  {int} delay - Задержка в милисекундах.
    * @return {void}
    */
   const switchScreens = function (screenFrom, screenTo, delay) {
@@ -45,8 +60,8 @@ export default () => {
    * вызывается с аргументом true. Состояния хранятся как флаги в массиве
    * animatedScreensList, куда добавляются значения параметра name.
    *
-   * @param  {string} name                Имя анимации, блока или экрана
-   * @param  {string} animationFunction   Функция анимации. Если проигрывается
+   * @param  {string} name - Имя анимации, блока или экрана
+   * @param  {string} animationFunction - Функция анимации. Если проигрывается
    *                                      повторно, то запускается с true
    *                                      в качестве единственного аргумента.
    * @return {void}
@@ -63,8 +78,8 @@ export default () => {
 
   /**
    * Функция анимации страницы с призами.
-   * @param  {Boolean} isPlayed Флаг повторной анмации (если True, то анимация
-   *                            уже игралась).
+   * @param  {Boolean} isPlayed - Флаг повторной анмации (если true, то
+   *                              анимация уже игралась).
    * @return {void}
    */
   const animatePrizes = function (isPlayed) {
@@ -85,9 +100,63 @@ export default () => {
     prizesBlock.classList.add(animationClass);
   };
 
+  /**
+   * Функция анимации таймера на транице игры
+   * @return {void}
+   */
+  const animateTimer = function () {
+    const TIMER = 5 * 60 * 1000; // 5 минут
+
+    const printTime = function (progress) {
+      const timerMinutes = document.querySelector(`.game__counter span:first-of-type`);
+      const timerSeconds = document.querySelector(`.game__counter span:last-of-type`);
+      const currentTime = new Date(Math.floor((1 - progress) * TIMER));
+
+      timerMinutes.textContent = addLeadingZero(currentTime.getMinutes(), 2);
+      timerSeconds.textContent = addLeadingZero(currentTime.getSeconds(), 2);
+    };
+
+    const showNegativeResult = function () {
+      const screen = document.querySelector(`#result3`);
+      screen.classList.add(`screen--show`);
+      screen.classList.remove(`screen--hidden`);
+
+      const headingAppear = document.querySelector(`#negativeHeadingAppear`);
+      headingAppear.beginElement();
+    };
+
+    const timerAnimation = new window.Animation({
+      duration: TIMER,
+      renderFunction: printTime,
+      endingFunction: showNegativeResult,
+      fps: 10
+    });
+    timerAnimation.start();
+
+    const relaunchGame = document.querySelector(`.js-play`);
+    relaunchGame.addEventListener(`click`, () => timerAnimation.start());
+  };
+
+  /**
+   * Функция анимации страницы с призами.
+   * @param  {boolean} isPlayed - Флаг повторной анмации (если true, то
+   *                              анимация уже игралась).
+   * @return {void}
+   */
+  const animateGame = function (isPlayed) {
+    if (!isPlayed) {
+      animateTimer();
+    }
+  };
+
   // Если экран при загрузке — "Призы", то проигрывать анимацию сразу.
   if (screenListMap[getCurrentScreen()] === `prizes`) {
     animateScreen(`prizes`, animatePrizes);
+  }
+
+  // Если экран при загрузке — "Игра", то проигрывать анимацию сразу.
+  if (screenListMap[getCurrentScreen()] === `game`) {
+    animateScreen(`game`, animateGame);
   }
 
   /**
@@ -132,6 +201,13 @@ export default () => {
     // Запуск анимации призов.
     if (screenListMap[this.activeScreen] === `prizes`) {
       animateScreen(`prizes`, animatePrizes);
+    }
+
+    // Запуск анимации призов.
+    if (screenListMap[this.activeScreen] === `game`) {
+      if (screenListMap[currentScreen] !== `game`) {
+        animateScreen(`game`, animateGame);
+      }
     }
 
     // Само переключение экранов.

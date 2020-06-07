@@ -26,12 +26,16 @@ window.fullPageScroll = new FullPageScroll();
 window.fullPageScroll.init();
 
 // custom modules
+import Animation from './additions/animation.js';
 import bodyload from './additions/bodyload.js';
 import socialOnFocus from './additions/social-on-focus.js';
 import changeScreens from './additions/change-screens.js';
 import rulesButton from './additions/rules-button.js';
 import ripple from './additions/ripple.js';
 import resultAnimation from './additions/result-animation.js';
+
+// Adding set of animate methods to global scope
+window.Animation = Animation;
 
 bodyload();
 socialOnFocus();
