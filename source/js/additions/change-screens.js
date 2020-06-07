@@ -129,9 +129,9 @@ export default () => {
       duration: TIMER,
       renderFunction: printTime,
       endingFunction: showNegativeResult,
-      fps: 12
+      fps: 12,
+      begin: true
     });
-    timerAnimation.start();
 
     const relaunchGame = document.querySelector(`.js-play`);
     relaunchGame.addEventListener(`click`, () => timerAnimation.start());
