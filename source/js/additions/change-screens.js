@@ -129,7 +129,7 @@ export default () => {
       duration: TIMER,
       renderFunction: printTime,
       endingFunction: showNegativeResult,
-      fps: 10
+      fps: 12
     });
     timerAnimation.start();
 
