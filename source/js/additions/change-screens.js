@@ -83,15 +83,48 @@ export default () => {
    * @return {void}
    */
   const animatePrizes = function (isPlayed) {
+    const CASES_START_VALUE = 1;
+    const CASES_TARGET_VALUE = 7;
+    const CODES_START_VALUE = 11;
+    const CODES_TARGET_VALUE = 900;
+
     const prizesBlock = document.querySelector(`.screen--prizes .prizes`);
     const animationClass = `prizes--animated`;
     const primaryAward = document.querySelector(`.prizes__item--journeys img`);
     const secondaryAward = document.querySelector(`.prizes__item--cases img`);
     const additionalAward = document.querySelector(`.prizes__item--codes img`);
+    const casesCount = document.querySelector(`.prizes__item--cases .prizes__desc b`);
+    const codesCount = document.querySelector(`.prizes__item--codes .prizes__desc b`);
 
     if (isPlayed) {
       prizesBlock.classList.remove(animationClass);
+      casesCount.textContent = CASES_TARGET_VALUE;
+      codesCount.textContent = CODES_TARGET_VALUE;
       return;
+    } else {
+      casesCount.textContent = CASES_START_VALUE;
+      const casesCountAnimation = new window.Animation({
+        duration: 750,
+        renderFunction: (progress) => {
+          casesCount.textContent =
+            CASES_START_VALUE +
+            Math.ceil(progress * (CASES_TARGET_VALUE - CASES_START_VALUE));
+        },
+        fps: 12
+      });
+      casesCountAnimation.start(5750);
+
+      codesCount.textContent = CODES_START_VALUE;
+      const codesCountAnimation = new window.Animation({
+        duration: 1200,
+        renderFunction: (progress) => {
+          codesCount.textContent
+            = CODES_START_VALUE +
+            Math.ceil(progress * (CODES_TARGET_VALUE - CODES_START_VALUE));
+        },
+        fps: 12
+      });
+      codesCountAnimation.start(7000);
     }
 
     primaryAward.src = `img/primary-award.svg`;
