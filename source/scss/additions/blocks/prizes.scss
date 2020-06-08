@@ -152,3 +152,9 @@
 .game__buttons {
   display: block;
 }
+
+.prizes__item--codes .prizes__desc b {
+  display: inline-block;
+  width: 3ch;
+  text-align: right;
+}
